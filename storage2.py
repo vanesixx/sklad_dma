@@ -99,9 +99,9 @@ def edit_product():
 def menu():
     print("Vítej ve skladu")
     print("###############\n")
-    print("1. Výpis polože")
-    print("2. Přidání položky")
-    print("3. Vyhledat položku")
+    print("1. Výpis produktů")
+    print("2. Přidání produktu")
+    print("3. Vyhledat produkt")
     print("4. Zobrazit celkovou cenu")
     print("5. Zobrazit nejlevnější produkt")
     print("6. Zobrazit nejdražší produkt")
@@ -111,19 +111,19 @@ def menu():
     choice = int(input("\nVolba: "))
 
     if choice == 1:
-        print("Položky na skladě jsou:")
+        print("Produkty na skladě jsou:")
         print_products()
         print("")
         menu()
 
     elif choice == 2:
-        print("Přidání poožky:")
+        print("Přidání produktu:")
         add_product()
         print("")
         menu()
 
     elif choice == 3:
-        print("Vyhledat položku:")
+        print("Vyhledat produkt:")
         search_product()
         print("")
         menu()
