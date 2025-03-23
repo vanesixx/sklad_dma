@@ -33,12 +33,19 @@ def search_product():
         if search_term in product['name']:
             found_products.append(product)
 
+    if len(found_products) > 0:
+        for product in found_products:
+            print(product)
+        else:
+            print("Nebyly nalezeny žádné produkty.")
+
 
 def menu():
     print("Vítej ve skladu")
     print("###############\n")
     print("1. Výpis polože")
     print("2. Přidání položky\n")
+    print("3. Vyhledat položku")
 
     choice = int(input("Volba: "))
 
@@ -51,6 +58,12 @@ def menu():
     elif choice == 2:
         print("Přidání poožky:")
         add_product()
+        print("")
+        menu()
+
+    elif choice == 3:
+        print("Vyhledat položku:")
+        search_product()
         print("")
         menu()
 
