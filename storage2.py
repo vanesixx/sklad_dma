@@ -68,6 +68,17 @@ def most_expensive_product():
         print("Žádné produkty.")
 
 
+def avarage_price():
+    if len(products) > 0:
+        total_price = 0
+        for product in products:
+            total_price += product['price']
+        avg = total_price / len(products)
+        print(f"Průměrná cena: {avg}$")
+
+    else:
+        print("Žádné produkty.")
+
 def menu():
     print("Vítej ve skladu")
     print("###############\n")
@@ -77,6 +88,7 @@ def menu():
     print("4. Zobrazit celkovou cenu")
     print("5. Zobrazit nejlevnější produkt")
     print("6. Zobrazit nejdražší produkt")
+    print("7. Průměrná cena")
 
     choice = int(input("\nVolba: "))
 
@@ -113,6 +125,12 @@ def menu():
     elif choice == 6:
         print("Zobrazit nejdražší produkt:")
         most_expensive_product()
+        print("")
+        menu()
+
+    elif choice == 7:
+        print("Průměrná cena:")
+        avarage_price()
         print("")
         menu()
 
