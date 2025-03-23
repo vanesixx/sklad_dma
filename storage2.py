@@ -79,6 +79,23 @@ def avarage_price():
     else:
         print("Žádné produkty.")
 
+
+def edit_product():
+    print("Seznam produktů k úpravě:")
+    for i, product in enumerate(products):
+        print(f"{i+1}. {product['name']}, cena: {product['price']}$")
+
+    choice = int(input("Zadejte číslo produktu k úpravě:")) - 1
+    if 0 <= choice < len(products):
+        new_name = input("Nový název produktu:")
+        new_price = float(input("Nová cena produktu:"))
+        products[choice]['name'] = new_name
+        products[choice]['price'] = new_price
+
+    else:
+        print("Neplatná volba.")
+
+
 def menu():
     print("Vítej ve skladu")
     print("###############\n")
@@ -89,6 +106,7 @@ def menu():
     print("5. Zobrazit nejlevnější produkt")
     print("6. Zobrazit nejdražší produkt")
     print("7. Průměrná cena")
+    print("8. Úprava produktu")
 
     choice = int(input("\nVolba: "))
 
@@ -131,6 +149,12 @@ def menu():
     elif choice == 7:
         print("Průměrná cena:")
         avarage_price()
+        print("")
+        menu()
+
+    elif choice == 8:
+        print("Úprava produktu:")
+        edit_product()
         print("")
         menu()
 
