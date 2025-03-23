@@ -27,15 +27,15 @@ def add_product():
 
 
 def search_product():
-    search_term = input("Napiš název produktu:")
+    search_term = input("Napiš část názvu produktu:").lower()
     found_products = []
     for product in products:
-        if search_term in product['name']:
+        if search_term in product['name'].lower():
             found_products.append(product)
 
     if len(found_products) > 0:
         for product in found_products:
-            print(product)
+            print(f"Název produktu2: {product['name']}, cena: {product['price']}$")
         else:
             print("Nebyly nalezeny žádné produkty.")
 
