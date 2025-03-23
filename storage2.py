@@ -158,6 +158,9 @@ def menu():
         print("")
         menu()
 
+    elif choice == 9:
+        print("Konec programu.")
+
     else:
         print("Zadal jsi špatně!\n")
         menu()
