@@ -26,6 +26,14 @@ def add_product():
     products.append(product2)
 
 
+def search_product():
+    search_term = input("Napiš název produktu:")
+    found_products = []
+    for product in products:
+        if search_term in product['name']:
+            found_products.append(product)
+
+
 def menu():
     print("Vítej ve skladu")
     print("###############\n")
