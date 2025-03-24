@@ -107,6 +107,7 @@ def menu():
     print("6. Zobrazit nejdražší produkt")
     print("7. Průměrná cena")
     print("8. Úprava produktu")
+    print("9. Konec")
 
     choice = int(input("\nVolba: "))
 
